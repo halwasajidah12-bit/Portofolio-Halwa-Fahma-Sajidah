@@ -1,0 +1,911 @@
+/* -------------------------
+   Pastel Brown Cute Theme
+   ------------------------- */
+
+/* Color tokens */
+:root {
+  --brown-main: #caa678;    /* main brown */
+  --brown-dark: #8b6f4a;    /* darker brown for text */
+  --brown-soft: #f7efe1;    /* soft background */
+  --accent: #e9d5b4;        /* accent pale */
+  --card-shadow: rgba(139,111,74,0.08);
+  --glass: rgba(255,255,255,0.6);
+}
+
+/* Global */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--brown-soft);
+  color: var(--brown-dark);
+  scroll-behavior: smooth;
+}
+/* NAVBAR */
+
+.navbar {
+  background: linear-gradient(90deg, #f8f1e4, #e9d5b4, #caa678) ;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+  backdrop-filter: blur(6px);
+}
+
+/* navbar elevation when scroll */
+.navbar-elevate {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Brand */
+.navbar .navbar-brand {
+  color: var(--brown-dark);
+  letter-spacing: 0.4px;
+}
+
+/* Nav links */
+.navbar .nav-link {
+  color: rgba(53, 37, 21, 0.8);
+  margin-left: 0.6rem;
+  transition: color 0.25s, transform 0.25s;
+  padding: .4rem .6rem;
+  border-radius: .5rem;
+}
+
+.navbar .nav-link:hover {
+  color: var(--brown-dark);
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.7);
+}
+
+.navbar .nav-link.active {
+  color: var(--brown-dark);
+  background: linear-gradient(90deg, rgba(234,214,180,0.3), rgba(255,255,255,0.3));
+  font-weight: 600;
+}
+.text-brown{
+  color: var (--brown-dark);
+}
+
+/* ===== ALIGN INSTAGRAM & WHATSAPP CARDS ===== */
+#instagram-profile, 
+#whatsapp-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#instagram-profile .card,
+#whatsapp-contact .card {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Biar dua card sejajar proporsional */
+#instagram-profile, #whatsapp-contact {
+  min-height: 80vh; /* Sesuaikan tinggi agar simetris */
+}
+
+/* ===== CENTER PROFILE IMAGE IN CARD ===== */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-card .profile-img {
+  display: block;
+  margin: 0 auto 15px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--brown-main);
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(139,111,74,0.15);
+}
+
+/* Spasi antar section */
+#whatsapp-contact {
+  margin-top: -40px; /* Supaya sejajar rapi dengan IG */
+}
+
+
+
+.about-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+  background-color: var(--brown-soft);
+}
+.about-image img{
+  object-fit :cover;
+  height: 100%;
+  width : 100%;
+  border-radius: 10px;
+
+}
+.about-text {
+  padding: 60px 80px;
+  color: var(--brown-dark);
+  background-color: var(--brown-light, #f8f1e4);
+}
+
+.about-text h1{
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+.about-text h4 {
+  font-size: 1.3rem;
+  color: var(--brown-dark);
+  letter-spacing: 0.5px;
+}
+.about-text p{
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 550px;
+}
+.about-text .btn-main{
+  background-color: var(--brown-dark);
+  color: var(--brown-soft);
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.about-text .btn-main:hover{
+  background-color: var(--brown-main);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+
+@media (max-width :991px){
+  .about-section {
+    flex-direction: column;
+  }
+  .about-image {
+    height: 60vh;
+  }
+  .about-text{
+    padding: 40px 25px;
+  }
+  .about-text h1{
+    font-size: 2.2rem;
+  }
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--brown-dark);
+  background: url("img_pattern.jpeg") center/400px repeat, linear-gradient(135deg, #f8f1e4 0%, #f1e6d6 40%, #e9d5b4 100%);
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+  background-size: 300% 300%;
+  animation: gradientMove 9s ease infinite;
+  position: relative;
+  padding-top: 4rem;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-title {
+  font-size: 2.6rem;
+  text-shadow: 0 6px 18px rgba(202,166,120,0.12);
+}
+
+.hero-sub {
+  font-size: 1.125rem;
+  color: rgba(55,40,20,0.85);
+  margin-top: .6rem;
+}
+
+/* Buttons */
+.btn-main {
+  background-color: var(--brown-dark);
+  color: var(--brown-soft);
+  border: none;
+  padding: .6rem 1.1rem;
+  border-radius: 12px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(139,111,74,0.12); }
+
+.btn-outline-main {
+  background: transparent;
+  color: var(--brown-dark);
+  border: 1.5px solid rgba(139,111,74,0.14);
+  padding: .55rem 1rem;
+  border-radius: 12px;
+  transition: all .2s ease;
+}
+
+.btn-outline-main:hover {
+  background: var(--brown-dark);
+  color: var(--brown-soft);
+  transform: translateY(-3px);
+}
+
+/* Sections */
+.bg-section {
+  background: transparent;
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
+}
+
+/* ---- Link Card (Home Page Bottom Section) ---- */
+.link-card {
+  background-color: #fff8f1;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.link-card:hover {
+  background-color: var(--brown-soft);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.link-card h5 {
+  color: var(--brown-dark);
+}
+
+.link-card p {
+  color: #8b7e74;
+}
+
+/* ------------------------------
+   Certificates Page Layout Fix
+   ------------------------------ */
+
+.certificate-gallery {
+  background-color: #fdf7f2;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.certificate-card {
+  background-color: #fff8f1;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.certificate-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+}
+
+.certificate-card img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.certificate-card .card-body {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+}
+
+.certificate-card h5 {
+  color: var(--brown-dark);
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.certificate-card p {
+  font-size: 0.9rem;
+  color: #8b7e74;
+}
+
+/* Center last card automatically if odd number */
+.row.justify-content-center > .col-md-4:nth-last-child(1):nth-child(odd) {
+  display: flex;
+  justify-content: center;
+}
+/* ===========================================
+   IMAGE ZOOM-IN VIEW (PASTEL BROWN MODAL)
+   =========================================== */
+
+/* Hover zoom effect */
+.gallery-card {
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: #fdf8f3;
+  box-shadow: 0 4px 10px rgba(180, 140, 90, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  transition: transform 0.6s ease, filter 0.3s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.08);
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(160, 110, 60, 0.25);
+}
+
+.gallery-card .card-body {
+  background-color: #fffaf6;
+  border-top: 1px solid rgba(160, 110, 60, 0.2);
+  text-align: center;
+}
+
+.gallery-card .card-title {
+  color: #6b4f3f;
+  font-weight: 600;
+}
+
+.gallery-card .card-text {
+  color: #a58570;
+}
+
+/* Fullscreen modal */
+.img-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(80, 60, 40, 0.75);
+  backdrop-filter: blur(6px);
+  overflow: auto;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Zoomed image */
+.img-modal-content {
+  margin: auto;
+  display: block;
+  max-width: 60%;
+  max-height: 80vh;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  animation: zoomIn 0.4s ease;
+  object-fit: contain;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Close button */
+.close-img {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 45px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-img:hover {
+  color: var(--brown-main);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .img-modal-content {
+    max-width: 95%;
+  }
+}
+
+
+/* Cards & gallery */
+.card {
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px var(--card-shadow);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.08); }
+
+.soft-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.9));
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(139,111,74,0.06);
+}
+.instagram-media {
+  border-radius: 12px !important;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+#videography {
+  background-color: var(--brown-soft);
+  border-radius: 20px;
+  padding: 60px 0;
+}
+/* ==== Fix ukuran video Instagram embed ==== */
+.video-card blockquote.instagram-media {
+  max-width: 400px !important; /* ubah nilai ini untuk atur lebar */
+  margin: 0 auto !important;   /* biar posisinya di tengah */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(160, 110, 60, 0.15);
+  background: #fffaf6;
+  transition: transform 0.3s ease;
+}
+
+.video-card blockquote.instagram-media:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(160, 110, 60, 0.25);
+}
+
+/* ===============================
+   VIDEOGRAPHY SECTION ALIGNMENT
+   =============================== */
+   #videography .row{
+    display: flex;
+    align-items: stretch;
+   }
+.video-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff8f1;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(139, 111, 74, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(139, 111, 74, 0.15);
+}
+
+/* Instagram embed scaling */
+.video-card blockquote.instagram-media {
+  max-width: 280px !important;
+  margin: 0 auto !important;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fffaf6;
+  box-shadow: 0 3px 10px rgba(160, 110, 60, 0.15);
+}
+
+/* Make profile perfectly centered */
+.ig-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .video-card blockquote.instagram-media {
+    max-width: 90% !important;
+  }
+}
+/* ===============================
+   FIX VIDEOGRAPHY ALIGNMENT (FINAL)
+   =============================== */
+
+/* Pastikan dua kolom (video + profil) sejajar */
+#videography .row {
+  display: flex;
+  align-items: center; /* sejajarkan vertikal */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Biar kedua kolom punya tinggi yang sama */
+#videography .col-md-6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Kartu video */
+.video-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff8f1;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(139, 111, 74, 0.08);
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+/* ===============================
+   VIDEOGRAPHY SECTION STYLING
+   =============================== */
+#videography {
+  background-color: var(--brown-soft);
+  border-radius: 20px;
+  padding: 60px 0;
+}
+
+.video-card {
+  background-color: #fff8f1;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(139, 111, 74, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(139, 111, 74, 0.15);
+}
+
+.video-card blockquote.instagram-media {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fffaf6;
+  box-shadow: 0 3px 10px rgba(160, 110, 60, 0.1);
+  min-height: 480px; /* biar tinggi sejajar */
+}
+
+.video-card .card-body {
+  padding-top: 1rem;
+}
+
+.video-card .card-body h5 {
+  color: var(--brown-dark);
+  font-weight: 600;
+}
+
+.video-card .card-body p {
+  color: rgba(55,40,20,0.7);
+}
+
+.video-card .btn-outline-main {
+  border-color: rgba(139,111,74,0.2);
+  color: var(--brown-dark);
+}
+
+.video-card .btn-outline-main:hover {
+  background-color: var(--brown-dark);
+  color: #fff;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .video-card blockquote.instagram-media {
+    min-height: 400px;
+  }
+}
+
+
+/* Ukuran video biar tidak kebesaran */
+.video-card blockquote.instagram-media {
+  max-width: 320px !important;
+  margin: 0 auto !important;
+}
+
+/* Profil IG sejajar vertikal */
+.ig-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* penuh vertikal */
+  text-align: center;
+}
+
+.ig-profile img {
+  border: 3px solid var(--brown-dark);
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ig-profile h5 {
+  margin-top: 15px;
+  font-weight: 600;
+  color: var(--brown-dark);
+}
+
+.ig-profile p {
+  color: rgba(55,40,20,0.6);
+  font-size: 0.9rem;
+}
+
+.ig-profile a {
+  margin-top: 10px;
+  background-color: var(--brown-dark);
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 20px;
+  transition: all 0.3s ease;
+}
+
+.ig-profile a:hover {
+  background-color: var(--brown-main);
+  transform: translateY(-3px);
+}
+
+/* Responsive fix */
+@media (max-width: 768px) {
+  #videography .row {
+    flex-direction: column;
+  }
+
+  .video-card, .ig-profile {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+/* --------------------------------------
+   Certificate Zoom Modal (Pastel Brown)
+   -------------------------------------- */
+
+.cert-modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(70, 55, 40, 0.7);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.cert-modal-content {
+  margin: auto;
+  display: block;
+  max-width: 65%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+  position: absolute;
+  top: 35px;
+  right: 50px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: var(--brown-soft);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .cert-modal-content {
+    max-width: 95%;
+  }
+}
+
+/* ============================
+   VIDEOGRAPHY CLEAN LAYOUT FIX
+   ============================ */
+
+#videography .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-card, .ig-card {
+  background-color: #fff8f1;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(139, 111, 74, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover, .ig-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(139, 111, 74, 0.15);
+}
+
+/* Embed Instagram video */
+.video-card blockquote.instagram-media {
+  width: 100% !important;
+  max-width: 400px !important;
+  margin: 0 auto !important;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.video-card blockquote.instagram-media {
+  max-width: 360px !important;
+  margin: 0 auto !important;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fffaf6;
+  box-shadow: 0 3px 10px rgba(160, 110, 60, 0.15);
+  min-height: 480px; /* biar tinggi antar embed lebih rata */
+}
+
+#instagram-profile {
+  background-color: var(--brown-soft);
+}
+
+.ig-profile img {
+  border: 3px solid var(--brown-dark);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.ig-profile h5 {
+  color: var(--brown-dark);
+}
+
+.ig-profile a.btn-main {
+  background-color: var(--brown-dark);
+  color: #fff;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.ig-profile a.btn-main:hover {
+  background-color: var(--brown-main);
+  transform: translateY(-2px);
+}
+
+
+/* Gallery specifics */
+.gallery-card img {
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  transition: transform 0.45s ease;
+}
+
+.gallery-card img:hover {
+  transform: scale(1.06);
+}
+
+/* Video card */
+.video-card .ratio {
+  background: #000;
+}
+
+/* Footers */
+.footer {
+  background: linear-gradient(180deg, rgba(202,166,120,0.08), rgba(202,166,120,0.02));
+  color: var(--brown-dark);
+  border-top: 1px solid rgba(0,0,0,0.03);
+}
+
+/* Small helpers */
+.mw-800 { max-width: 800px; }
+.text-muted { color: rgba(55,40,20,0.6) !important; }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero { height: 70vh; padding-top: 5.5rem; }
+  .hero-title { font-size: 1.8rem; }
+  .gallery-card img { height: 180px; }
+}
+@media (max-width: 768px) {
+  .video-card blockquote.instagram-media {
+    max-width: 90% !important;
+  }
+}
+#videography {
+  background-color: var(--brown-soft);
+  border-radius: 20px;
+  padding: 60px 0;
+}
+
+.video-card {
+  background-color: #fff8f1;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(139, 111, 74, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(139, 111, 74, 0.15);
+}
+
+.video-card blockquote.instagram-media {
+  max-width: 50% !important;
+  width: 50% !important;
+  margin: 0 auto !important;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fffaf6;
+  box-shadow: 0 3px 10px rgba(160, 110, 60, 0.1);
+  min-height: 480px; /* biar tinggi video sama */
+}
+
+.video-card .card-body {
+  padding-top: 1rem;
+}
+
+.video-card .card-body h5 {
+  color: var(--brown-dark);
+  font-weight: 600;
+}
+
+.video-card .card-body p {
+  color: rgba(55,40,20,0.7);
+}
+
+.video-card .btn-outline-main {
+  border-color: rgba(139,111,74,0.2);
+  color: var(--brown-dark);
+}
+
+.video-card .btn-outline-main:hover {
+  background-color: var(--brown-dark);
+  color: #fff;
+}
+.video-card.custom-small {
+  max-width: 300px !important;
+  min-height: 400px;
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .video-card blockquote.instagram-media {
+    min-height: 400px;
+  }
+}

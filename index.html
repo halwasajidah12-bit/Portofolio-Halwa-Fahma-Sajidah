@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halwa Creative Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Halwa</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About me</a></li>
+          <li class="nav-item"><a class="nav-link" href="porto.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero d-flex align-items-center text-center">
+    <div class="container" data-aos="fade-up">
+      <h1 class="display-4 fw-bold hero-title">Hi, i'm  Halwa 👋</h1>
+      <p class="lead hero-sub">Photographer & Vidio Editor</p>
+      <a href="about.html" class="btn btn-outline-main btn-lg mt-3">View About me</a>
+    </div>
+  </section>
+
+ 
+
+  <!-- Small Services / Highlights -->
+  <section class="py-4 text-center" data-aos="fade-up" data-aos-delay="200">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      
+      <!-- My Gallery Card -->
+      <div class="col-md-3 col-6">
+        <a href="porto.html" class="text-decoration-none">
+          <div class="card soft-card p-3 link-card">
+            <h5 class="mb-1 text-brown fw-bold">My Gallery</h5>
+            <p class="small text-muted mb-0">Portraits, Urban, Wedding</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- My Certificate Card -->
+      <div class="col-md-3 col-6">
+        <a href="certificate.html" class="text-decoration-none">
+          <div class="card soft-card p-3 link-card">
+            <h5 class="mb-1 text-brown fw-bold">My Certificate</h5>
+            <p class="small text-muted mb-0">Each certificate tells a story of learning and growth.</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <footer class="footer mt-5">
+    <div class="container text-center py-3">
+      <p class="mb-0">© 2025 Halwa Creative. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+
+  <script>
+    // Init AOS
+    AOS.init({ duration: 900, once: true });
+
+    // Small behavior to toggle navbar shadow on scroll
+    document.addEventListener('scroll', function () {
+      const nav = document.querySelector('.navbar');
+      if (window.scrollY > 10) nav.classList.add('navbar-elevate');
+      else nav.classList.remove('navbar-elevate');
+    });
+  </script>
+</body>
+</html>
